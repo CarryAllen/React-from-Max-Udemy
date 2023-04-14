@@ -1,22 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import ExpenseItem from './Components/ExpenseItem';
 
 function App() {
-/*   const para = document.createElement('p');
-  para.textContent = "this is also visible by imperative approach";
-  document.getElementById('root').append(para); */  //imperative approach
   return (
-      <div>
-        <h2> Lets Get Started </h2>
-        <p> this is also visible </p>
-      </div>
+    <div>
+      <h1> Hello, this is React </h1>
+      <ExpenseItem/>
+    </div>
   );
 }
 
 export default App;
 
 
+
+
 /* 
+
 <div className="App">
   <header className="App-header">
     <img src={logo} className="App-logo" alt="logo" />
