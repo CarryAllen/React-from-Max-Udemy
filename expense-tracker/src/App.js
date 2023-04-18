@@ -34,7 +34,7 @@ function App() {
   ];
   return (
     <div>
-      <h1> Hello, this is React </h1>
+      <h1> Expense Tracker React App </h1>
 
       <ExpenseItem title={expensesArray[0].title} amount={expensesArray[0].amount} date={expensesArray[0].date} /> 
       <ExpenseItem title={expensesArray[1].title} amount={expensesArray[1].amount} date={expensesArray[1].date} /> 
