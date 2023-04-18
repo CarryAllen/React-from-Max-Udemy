@@ -1,9 +1,9 @@
-// import logo from './logo.svg';
-import './App.css';
-import ExpenseItem from './Components/ExpenseItem';
 
-function App() {
-  const expensesArray = [
+import './App.css';
+import Expenses from './Components/Expenses';
+
+function App(props) {
+  const items = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -35,12 +35,7 @@ function App() {
   return (
     <div>
       <h1> Expense Tracker React App </h1>
-
-      <ExpenseItem title={expensesArray[0].title} amount={expensesArray[0].amount} date={expensesArray[0].date} /> 
-      <ExpenseItem title={expensesArray[1].title} amount={expensesArray[1].amount} date={expensesArray[1].date} /> 
-      <ExpenseItem title={expensesArray[2].title} amount={expensesArray[2].amount} date={expensesArray[2].date} /> 
-      <ExpenseItem title={expensesArray[3].title} amount={expensesArray[3].amount} date={expensesArray[3].date} /> 
-      
+      <Expenses items={items}/>
     </div>
   );
 }
