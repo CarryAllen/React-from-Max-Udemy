@@ -34,7 +34,7 @@ function App(props) {
   ];
   return (
     <div>
-      <h1> Expense Tracker React App </h1>
+      <h1> Expense Tracker </h1>
       <Expenses items={items}/>
     </div>
   );
