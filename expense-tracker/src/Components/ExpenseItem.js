@@ -6,8 +6,6 @@ import Card from './Card';
 
 export default function ExpenseItem(props) {
 
-
-
 	return (
 		<Card className='expense-item'>
 			<ExpenseDate date={props.date}/>
