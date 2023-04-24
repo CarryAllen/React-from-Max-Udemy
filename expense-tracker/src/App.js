@@ -1,3 +1,4 @@
+import React from 'react'
 import "./App.css";
 import Expenses from "./Components/Expenses";
 
@@ -32,19 +33,19 @@ function App(props) {
     },
   ];
 
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h2", {}, "Let's get started!"),
-    React.createElement(Expenses, { items: expenses })
-  );
-  
-  // return (
-  //   <div>
-  //     <h1> Expense Tracker </h1>
-  //     <Expenses items={items}/>
-  //   </div>
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
   // );
+  
+  return (
+    <div>
+      <h1> Expense Tracker </h1>
+      <Expenses items={items}/>
+    </div>
+  );
 }
 
 export default App;
