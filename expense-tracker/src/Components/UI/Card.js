@@ -1,7 +1,7 @@
 import React from 'react'
 import './Card.css';
 
-export default function Card(props) {
+const Card = (props) => {
 
   const classes = 'card ' + props.className;
 
@@ -11,3 +11,5 @@ export default function Card(props) {
     </div>
   );
 }
+
+export default Card

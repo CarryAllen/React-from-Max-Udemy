@@ -2,8 +2,8 @@ import React from 'react'
 import "./App.css";
 import Expenses from "./Components/Expenses/Expenses";
 
-function App(props) {
-  const items = [
+const App = () => {
+  const expenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -43,7 +43,7 @@ function App(props) {
   return (
     <div>
       <h1> Expense Tracker </h1>
-      <Expenses items={items}/>
+      <Expenses items={expenses}/>
     </div>
   );
 }

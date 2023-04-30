@@ -4,7 +4,7 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
 
-export default function ExpenseItem(props) {
+const ExpenseItem = (props) => {
 
 	return (
 		<Card className='expense-item'>
@@ -18,3 +18,4 @@ export default function ExpenseItem(props) {
 	)
 }
 
+export default ExpenseItem;

@@ -1,6 +1,7 @@
-import './ExpenseDate.css'
+import React from 'react';
+import './ExpenseDate.css';
 
-export default function ExpenseDate (props) {
+const ExpenseDate = (props) => {
 
   const month = props.date.toLocaleString('en-US',{month: 'long'});
   const day = props.date.toLocaleString('en-US',{day: '2-digit'});
@@ -14,3 +15,5 @@ export default function ExpenseDate (props) {
     </div>
   );
 }
+
+export default ExpenseDate;
