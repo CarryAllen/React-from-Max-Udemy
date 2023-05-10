@@ -12,7 +12,6 @@ const ExpenseItem = (props) => {
 	const clickHandler = () => {
 		setTitle('Updated');
 		console.log(title);
-		// console.log("ExpenseItem Evaluated by state");
 	};
 
 	
