@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = () => {
-  return <form>
+
+  const [enteredTitle, SetEnteredeTitle] = useState('');
+
+  const titleChangeHandler = (event) => {
+    console.log(event.target.value);
+  };
+
+  return (
+    <form>
     <div className='new-expense__controls'>
       <div className='new-expense__control'>
         <label>Title</label>
-        <input type='text' />
+        <input type='text' onChange={titleChangeHandler}/>
       </div>
 
       <div className='new-expense__control'>
@@ -24,6 +32,7 @@ const ExpenseForm = () => {
       <button type='submit'> Add expense </button>
     </div>
   </form>
+  )
 };
 
 export default ExpenseForm;

@@ -43,7 +43,7 @@ const App = () => {
   
   return (
     <div>
-      
+      <h1> Expense Tracker </h1>
       <NewExpense/>
       <Expenses items={expenses}/>
     </div>
