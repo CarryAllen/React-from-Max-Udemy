@@ -11,6 +11,7 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
+  //expenses should be displayed basis of year selected
   const filteredExpenses = props.items.filter(exp => {
     return exp.date.getFullYear().toString() === filteredYear;
   });
@@ -20,7 +21,7 @@ const Expenses = (props) => {
       <Card className="expenses">
         <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}  />
 
-        {props.items.map((exp) => <ExpenseItem key={exp.id} title={exp.title} amount={exp.amount} date={exp.date}/>)}
+        {filteredExpenses.map((exp) => <ExpenseItem key={exp.id} title={exp.title} amount={exp.amount} date={exp.date}/>)}
         
       </Card>
     </div>
