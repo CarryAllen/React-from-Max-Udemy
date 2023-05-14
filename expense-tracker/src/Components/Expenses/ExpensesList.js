@@ -4,8 +4,8 @@ import ExpenseItem from "./ExpenseItem";
 const ExpensesList = (props) => {
   let NoExpContent = <p> No Expenses Found </p>;
 
-  if (filteredExpenses > 0) {
-    NoExpContent = filteredExpenses.map((exp) => (
+  if (props.items.length > 0) {
+    NoExpContent = props.items.length.map((exp) => (
       <ExpenseItem
         key={exp.id}
         title={exp.title}
