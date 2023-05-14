@@ -2,16 +2,23 @@ import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
 const ExpensesList = (props) => {
-  let NoExpContent = <p> No Expenses Found </p>;
 
-  if (props.items.length > 0) {
-    NoExpContent = props.items.length.map((exp) => (
+  if (props.items.length === 0) {
+    return <h2 className="expenses-list__fallback"> No Expenses Found </h2>
+  }
+
+  return (
+    <ul className="expenses-list">
+    {props.items.length.map((exp) => (
       <ExpenseItem
         key={exp.id}
         title={exp.title}
         amount={exp.amount}
         date={exp.date}
       />
-    ));
-  }
-};
+    ))}
+  </ul>
+  );
+}
+
+export default ExpensesList;
