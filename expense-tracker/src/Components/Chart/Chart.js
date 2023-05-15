@@ -4,7 +4,7 @@ import './Chart.css';
 
 const Chart = props => {
 
-  const dataPointsValues = props.dataPoints.map(dtpnt => dtpnt.value);
+  const dataPointsValues = props.dataPoints.map((dtpnt) => dtpnt.value);
   const totalMaximum = Math.max(...dataPointsValues);
 
   return (
