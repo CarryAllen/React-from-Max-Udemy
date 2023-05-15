@@ -4,8 +4,8 @@ import './ExpenseForm.css'
 const ExpenseForm = (props) => {
 
   const [enteredTitle, setEnteredTitle] = useState(''); //format of Array destructuring
-  const [amount, setEnteredAmount] = useState('');
-  const [date, setEnteredDate] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
   // this is the common state for all 3 inputs
   // const [userInput, setUserInput] = useState({
@@ -60,8 +60,8 @@ const ExpenseForm = (props) => {
 
     const expenseData =  {
       title : enteredTitle,
-      amount: amount,
-      date: new Date(date),
+      amount: +enteredAmount,
+      date: new Date(enteredDate),
     };
 
     
@@ -81,12 +81,12 @@ const ExpenseForm = (props) => {
 
       <div className='new-expense__control'>
         <label>Amount</label>
-        <input type='number' min="0.01" step="0.01" value={amount} onChange={amountChangeHandler} />
+        <input type='number' min="0.01" step="0.01" value={enteredAmount} onChange={amountChangeHandler} />
       </div>
 
       <div className='new-expense__control'>
         <label>Date</label>
-        <input type='date' min="2019-01-01" step="2022-12-31" value={date} onChange={dateChangeHandler} />
+        <input type='date' min="2019-01-01" step="2022-12-31" value={enteredDate} onChange={dateChangeHandler} />
       </div>
     </div>
 
