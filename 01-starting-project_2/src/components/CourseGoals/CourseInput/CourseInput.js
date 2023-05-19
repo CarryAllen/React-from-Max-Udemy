@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Button from '../../UI/Button/Button';
 import './CourseInput.css';
 
+
+//this FormControl section is is act like component here with the syntax of styled components and this is getting used in return function on the place of div 
 const FormControl = styled.div`
   margin: 0.5rem 0;
 
@@ -61,7 +63,7 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <FormControl>
+      <FormControl className={!isValid && 'invalid'}>
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </FormControl>
