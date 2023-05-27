@@ -1,6 +1,6 @@
 import React from 'react';
 import AddUser from './Components/Users/AddUser';
-import './Components/Users/AddUser.css';
+import './Components/Users/AddUser.module.css';
 
 function App() {
   return (
