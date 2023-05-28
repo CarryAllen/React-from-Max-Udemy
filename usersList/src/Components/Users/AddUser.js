@@ -19,14 +19,15 @@ const AddUser = (props) =>  {
   const addUserHandler = (event) => {
     event.preventDefault();
     if (enteredUsename.trim().length === 0 || enteredAge.trim().length === 0) {
-      console.log('enter name to log the data');
+      // console.log('enter name to log the data');
       return;
     }
     if (+enteredAge < 1) {
-      console.log('enter valid age');
+      // console.log('enter valid age');
       return;
     }
-    console.log(enteredUsename, enteredAge);
+    // console.log(enteredUsename, enteredAge);
+    props.onAddUser(enteredUsename, enteredAge);
     setEnteredUsername('');
     setEnteredAge('');
   };
