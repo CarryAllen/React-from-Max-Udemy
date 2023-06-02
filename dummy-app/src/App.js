@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import MainHeader from './components/MainHeader/MainHeader';
 
 function App() {
+
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  
+  useEffect (() => { //this will run only once, and this updates the state on ly when dependencies changed
+    const storeUserLoggedInInformation = localStorage.getItem('isLoggedIn');
+
+    if (storeUserLoggedInInformation === '1') { 
+      setIsLoggedIn(true);
+    }
+
+  }, [] /*this bracket is for dependencies */);
 
   const loginHandler = (email, password) => {
     // We should of course check email and password
     // But it's just a dummy/ demo anyways
+    localStorage.setItem('isLoggedIn', 'true');
     setIsLoggedIn(true);
   };
+
 
   const logoutHandler = () => {
     setIsLoggedIn(false);
