@@ -10,7 +10,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   
-  useEffect (() => { //this will run only once, and this updates the state on ly when dependencies changed
+  useEffect (() => { //this will run only once, and this updates the state only when dependencies changed
     const storeUserLoggedInInformation = localStorage.getItem('isLoggedIn');
 
     if (storeUserLoggedInInformation === '1') { 
