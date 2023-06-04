@@ -12,10 +12,21 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect (() => {
-    setFormIsValid(
-      enteredEmail.includes('@') && enteredPassword.trim().length > 6
-    );
-  }, [setFormIsValid, enteredEmail, enteredPassword] ); /* it will rerun this useEffect function but only if either setFormIsValid, or enteredEmail or enteredPassword, changed in the last component rerender cycle. If neither of the three changed, this effect function will not rerun. you can remove setFormIsValid bcz useState insured that react never change */
+    const identifier = setTimeout(() =>{
+      console.log('Checking form Validity');
+      setFormIsValid(
+        enteredEmail.includes('@') && enteredPassword.trim().length > 6
+      );
+    }, 500);
+
+    //cleanup function
+    return () => {
+      console.log('CLEANUP');
+      clearTimeout(identifier);
+    };
+  }, [setFormIsValid, enteredEmail, enteredPassword] ); 
+  
+  /* it will rerun this useEffect function but only if either setFormIsValid, or enteredEmail or enteredPassword, changed in the last component rerender cycle. If neither of the three changed, this effect function will not rerun. you can remove setFormIsValid bcz useState insured that react never change */
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
