@@ -13,7 +13,10 @@ const Login = (props) => {
 
   useEffect (() => {
     console.log('Effect is Running');
-  })
+    return () => {
+      console.log('Effect CleanUp')
+    };
+  }, []);
 
   useEffect (() => {
     const identifier = setTimeout(() =>{
