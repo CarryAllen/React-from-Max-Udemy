@@ -23,7 +23,7 @@ const Login = (props) => {
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
-    isValid: false,
+    isValid: undefined,
   });
 
   useEffect(() => {
