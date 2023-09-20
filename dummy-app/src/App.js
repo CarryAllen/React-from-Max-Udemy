@@ -7,17 +7,14 @@ import AuthContext from './store/auth-context';
 
 function App() {
 
-  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
-  
-  useEffect (() => { //this will run only once, and this updates the state only when dependencies changed
+  useEffect (() => { //this anonymous func will run only once, and this updates the state only when dependencies changed
     const storeUserLoggedInInformation = localStorage.getItem('isLoggedIn');
 
     if (storeUserLoggedInInformation === '1') { 
       setIsLoggedIn(true);
     }
-
   }, [] /*this bracket is for dependencies */);
 
   const loginHandler = (email, password) => {
@@ -26,7 +23,6 @@ function App() {
     localStorage.setItem('isLoggedIn', 'true');
     setIsLoggedIn(true);
   };
-
 
   const logoutHandler = () => {
     setIsLoggedIn(false);
