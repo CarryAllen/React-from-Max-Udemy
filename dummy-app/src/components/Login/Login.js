@@ -29,6 +29,7 @@ const Login = (props) => {
   // const [emailIsValid, setEmailIsValid] = useState();
   // const [enteredPassword, setEnteredPassword] = useState("");
   // const [passwordIsValid, setPasswordIsValid] = useState();
+  
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -48,6 +49,7 @@ const Login = (props) => {
     };
   }, []);
 
+  //object Destructuring: this is an important concept to further optimize useEffect to avoid unnecessary effect execution not just when using it with useReducer, but also when doing so.
   const { isValid: emailIsValid} = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
@@ -63,6 +65,7 @@ const Login = (props) => {
       clearTimeout(identifier);
     };
   }, [emailIsValid, passwordIsValid]);
+
   /* it will rerun this useEffect function but only if either setFormIsValid, or enteredEmail or enteredPassword, changed in the last component rerender cycle. If neither of the three changed, this effect function will not rerun. you can remove setFormIsValid bcz useState insured that react never change */
 
   const emailChangeHandler = (event) => {
