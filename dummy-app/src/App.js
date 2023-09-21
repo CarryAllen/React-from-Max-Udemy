@@ -9,13 +9,14 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
-  useEffect (() => { //this anonymous func will run only once, and this updates the state only when dependencies changed
+  useEffect (() => { 
+    //this anonymous func will run only once, and this updates the state only when dependencies changed
     const storeUserLoggedInInformation = localStorage.getItem('isLoggedIn');
 
     if (storeUserLoggedInInformation === '1') { 
       setIsLoggedIn(true);
     }
-  }, [] /*this bracket is for dependencies */);
+  }, [] /*this square bracket is for dependencies */);
 
   const loginHandler = (email, password) => {
     // We should of course check email and password
@@ -25,6 +26,7 @@ function App() {
   };
 
   const logoutHandler = () => {
+    localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
   };
 
